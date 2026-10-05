@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustStats from "./components/TrustStats";
@@ -10,6 +11,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Gallery from "./pages/Gallery";
 
+// HomePage component wrapping your homepage sections
 function HomePage() {
   return (
     <>
@@ -29,18 +31,26 @@ function HomePage() {
   );
 }
 
-export default function App() {
-  const isGalleryPage = window.location.pathname === "/gallery";
-
-  if (isGalleryPage) {
-    return (
-      <>
-        <Navbar />
+// Gallery layout page with Navbar and Footer
+function GalleryPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
         <Gallery />
-        <Footer />
-      </>
-    );
-  }
+      </main>
+      <Footer />
+    </>
+  );
+}
 
-  return <HomePage />;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
