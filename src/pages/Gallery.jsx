@@ -1,37 +1,37 @@
 import { useState } from "react";
 import { ArrowLeft, Maximize2, X } from "lucide-react";
 
-
 import cabinPhoto from "../assets/images/cabin_photo.jpg";
 import clinicPhoto from "../assets/images/Clinic_photo.jpeg";
 import outsidePhoto from "../assets/images/outside_pic.jpeg";
-import overviewPhoto from "../assets/images/overview_photo.jpg";
+import overviewPhoto from "../assets/images/overview_photo.jpg";;
 
 const galleryImages = [
   {
     id: 1,
     category: "Clinic",
     title: "Clinic Exterior",
-    image: clinicPhoto,
+    image: outsidePhoto,
   },
   {
     id: 2,
     category: "Clinic",
-    title: "Reception Area",
-    image: cabinPhoto,
+    title: "Our Clinic",
+    image: clinicPhoto,
   },
   {
     id: 3,
     category: "Facilities",
     title: "Comfortable Patient Area",
-    image: overviewPhoto,
+    image: cabinPhoto,
   },
   {
     id: 4,
-    category: "Doctor",
-    title: "Professional Consultation",
-    image: outsidePhoto,
+    category: "Clinic",
+    title: "Clinic Overview",
+    image: overviewPhoto,
   },
+];
   
   //   id: 5,
   //   category: "Facilities",
@@ -60,7 +60,7 @@ const galleryImages = [
   //   image:
   //     "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1400&q=85",
   // },
-];
+
 
 const categories = ["All", "Clinic", "Doctor", "Facilities"];
 
